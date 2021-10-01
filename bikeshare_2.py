@@ -295,6 +295,8 @@ def visualisation_analysis(city, df):
         raw_data(city)
     elif action == 2:
         load_analysis_selected(df)
+    else:
+        print('This choice is not available')
 
 def main():
     while True:
