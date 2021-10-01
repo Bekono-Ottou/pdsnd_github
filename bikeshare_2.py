@@ -314,9 +314,7 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
-        raw_data(city)
-
-        load_analysis_selected(df)
+        visualisation_analysis(city, df)
 
         restart = input('\n Would you like to restart? Enter yes or no.\n').lower()
         if restart != 'yes':
