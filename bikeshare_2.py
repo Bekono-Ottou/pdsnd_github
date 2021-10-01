@@ -20,19 +20,19 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('\n Hello! Let\'s explore some US bikeshare data!\n \n')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input("Enter the city name (chicago, new york city, washington): \n").lower()
     while city not in CITY_DATA:
         print("Please, enter a valid city name (chicago, new york city, washington): \n")
         city = input("Enter the city name: \n").lower()
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    # Get user input for month (all, january, february, ... , june)
     month = input("Enter the month you want to filter by (all, january, february, ... , june): \n").lower()
     while month not in MONTHS:
         print("Please, enter a valid month (all, january, february, ... , june): \n")
         month = input("Enter the month you want to filter by: \n").lower()
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # Get user input for day of week (all, monday, tuesday, ... sunday)
     day = input("Enter the day you want to filter by (all, monday, tuesday, ... sunday): \n").lower()
     while day not in DAYS:
         print("Please, enter a valid day (all, monday, tuesday, ... sunday): \n")
@@ -91,7 +91,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    # Display the most common month
     # convert the Start Time column to datetime
     # Make sure the dataframe contains the require column
     if 'Start Time' in df:
@@ -104,7 +104,7 @@ def time_stats(df):
         popular_month = df['month'].mode()[0]
         print("The most common month people travel is:\n {} \n".format(popular_month))
 
-    # TO DO: display the most common day of week
+    # Display the most common day of week
     # extract the day of the week from the Start Time column to create a day_of_week column
         df['day_of_week'] = df['Start Time'].dt.day_name()
 
@@ -112,7 +112,7 @@ def time_stats(df):
         popular_day_of_week = df['day_of_week'].mode()[0]
         print("The most common day of the week people travel is:\n {} \n".format(popular_day_of_week))
 
-    # TO DO: display the most common start hour
+    # Display the most common start hour
     # extract hour from the Start Time column to create an hour column
         df['hour'] = df['Start Time'].dt.hour
 
@@ -132,7 +132,7 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # Display most commonly used start station
     # Make sure the dataframe contains the require column
     if 'Start Station'in df:
         most_common_start_sta = df['Start Station'].mode()[0]
@@ -140,7 +140,7 @@ def station_stats(df):
     else:
         print("There is no start station data for the parameters you entered")
 
-    # TO DO: display most commonly used end station
+    # Display most commonly used end station
     # Make sure the dataframe contains the require column
     if 'End Station' in df:
         most_common_end_sta = df['End Station'].mode()[0]
@@ -148,7 +148,7 @@ def station_stats(df):
     else:
         print("There is no end station data for the parameters you entered")
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # Display most frequent combination of start station and end station trip
     # Make sure the dataframe contains the require column
     if 'End Station' in df and 'Start Station'in df:
         combin_start_end_station = df[['Start Station', 'End Station']].mode().loc[0]
@@ -167,13 +167,13 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # Display total travel time
     # Make sure the dataframe contains the require column
     if 'Trip Duration' in df:
         total_travel_time = df['Trip Duration'].sum()
         print("The total travel time is:\n {} \n".format(total_travel_time))
 
-    # TO DO: display mean travel time
+    # Display mean travel time
     # Make sure the dataframe contains the require column
         mean_travel_time = df['Trip Duration'].mean()
         print("The mean travel time is:\n {} \n".format(mean_travel_time))
@@ -190,7 +190,7 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+    # Display counts of user types
     # Make sure the dataframe contains the require column
     if 'User Type'in df:
         user_types = df['User Type'].value_counts()
@@ -198,7 +198,7 @@ def user_stats(df):
     else:
         print("There is no user type data for the parameters you entered")
 
-    # TO DO: Display counts of gender
+    # Display counts of gender
     # Make sure the dataframe contains the require column
     if 'Gender' in df:
         gender_count = df['Gender'].value_counts()
@@ -206,7 +206,7 @@ def user_stats(df):
     else:
         print("There is no gender data for the parameters you entered")
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     # Make sure the dataframe contains the require column
     if 'Birth Year' in df:
         earliest_yob = int(df['Birth Year'].min())
