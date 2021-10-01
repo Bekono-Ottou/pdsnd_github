@@ -287,6 +287,15 @@ def raw_data(city):
         print("\n Make sure you correctly type no if you don't want to see the raw data \n")
         raw_data = input("Do you want to see the next 5 lines of raw data? (yes or no) \n").lower()
 
+def visualisation_analysis(city, df):
+    print("\n What would you like to do ? \n 1 - Visualise raw data \n 2 - Load analysis")
+    print("Please use the 1 or 2 to select the action to run. /n")
+    action = int(input())
+    if action == 1:
+        raw_data(city)
+    elif action == 2:
+        load_analysis_selected(df)
+
 def main():
     while True:
         city, month, day = get_filters()
