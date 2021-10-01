@@ -290,10 +290,10 @@ def raw_data(city):
 def visualisation_analysis(city, df):
     print("\n What would you like to do ? \n 1 - Visualise raw data \n 2 - Load analysis")
     print("Please use the 1 or 2 to select the action to run. /n")
-    action = int(input())
-    if action == 1:
+    action = input()
+    if action == '1':
         raw_data(city)
-    elif action == 2:
+    elif action == '2':
         load_analysis_selected(df)
     else:
         print('This choice is not available')
