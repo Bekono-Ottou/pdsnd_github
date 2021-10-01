@@ -288,18 +288,26 @@ def raw_data(city):
         raw_data = input("Do you want to see the next 5 lines of raw data? (yes or no) \n").lower()
 
 def visualisation_analysis(city, df):
-    print("\n What would you like to do ? \n 1 - Visualise raw data \n 2 - Load analysis")
-    print("Please use the 1 or 2 to select the action to run. /n")
-    action = input()
-    if action == '1':
-        raw_data(city)
-    elif action == '2':
-        load_analysis_selected(df)
-    else:
-        print('This choice is not available \n')
+    choice = 'yes'
+    while choice !='no':
         print("\n What would you like to do ? \n 1 - Visualise raw data \n 2 - Load analysis")
         print("Please use the 1 or 2 to select the action to run. /n")
         action = input()
+        if action == '1':
+            raw_data(city)
+            print('\n Do you want to run another action?')
+            print("\n Make sure you correctly type no if you don't want to run another action \n")
+            choice = input()
+        elif action == '2':
+            load_analysis_selected(df)
+            print('\n Do you want to run another action?')
+            print("\n Make sure you correctly type no if you don't want to run another action \n")
+            choice = input()
+        else:
+            print('This choice is not available \n')
+            print('\n Do you want to run the available actions?')
+            print("\n Make sure you correctly type no if you don't want to run the available actions \n")
+            choice = input()
 
 def main():
     while True:
