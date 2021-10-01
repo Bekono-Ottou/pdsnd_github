@@ -11,6 +11,7 @@ Use python to understand U.S bikeshare data.
 Calculate statistics and build an interactive environment where a user choose a data an filter for a dataset to analyse.
 
 For the initial commit, I just took the bikeshare_2.py file as it was at the end of the 'Explore US bikeshare data' project.
+The interactive environment runs well without any error or bug.
 
 ### Files used
 bikeshare_2.py : the python file that contains the code of the interactive environment for Exploring US bikeshare data.
