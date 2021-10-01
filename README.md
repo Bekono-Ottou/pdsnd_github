@@ -19,4 +19,4 @@ chicago.csv : bikeshare data for the city of chicago
 new_york_city.csv : bikeshare data for the city of new_york_city
 
 ### Credits
-udacity/pdsnd_github
+udacity/pdsnd_github, Udacity's FAQ
